@@ -1,0 +1,31 @@
+
+package analizadores;
+import java_cup.runtime.Symbol; 
+
+%% 
+%class Lexico
+%public 
+%line 
+%char 
+%cup 
+%unicode
+%ignorecase
+
+%init{ 
+    yyline = 1; 
+    yychar = 1; 
+%init} 
+
+BLANCOS=[ \r\t]+
+BINARIOS= ^1(1|0)*
+
+%%
+
+\n {yychar=1;}
+
+{BLANCOS} {}
+{BINARIOS} {return new Symbol(sym.NUM,yyline,yychar,yytext());}
+
+. {
+    System.out.println("Este es un error lex: "+yytext());
+}
