@@ -1,0 +1,115 @@
+package analizadores; 
+import java_cup.runtime.*;
+import java.util.ArrayList;
+
+parser code 
+{:
+    String cadena = "";
+    String cadena1 = "";
+    String cadena2 = "";
+    boolean flag = false;
+    /**
+     * Método al que se llama automáticamente ante algún error sintactico.
+     **/ 
+    public void syntax_error(Symbol s){ 
+        System.out.println("Error Sintáctico en la Línea " + (s.left) +
+        " Columna "+s.right+ ". No se esperaba este componente: " +s.value+"."); 
+    } 
+
+    /**
+     * Método al que se llama automáticamente ante algún error sintáctico 
+     * en el que ya no es posible una recuperación de errores.
+     **/ 
+    public void unrecovered_syntax_error(Symbol s) throws java.lang.Exception{ 
+        System.out.println("Error síntactico irrecuperable en la Línea " + 
+        (s.left)+ " Columna "+s.right+". Componente " + s.value + 
+        " no reconocido."); 
+    }  
+
+    public void obtenercadenatotal(String cadenatotal){
+        for (int i = 0; i < cadena.length(); i++) {
+            if (cadena.charAt(i) == '.'){
+                flag = true;
+                continue;
+            }
+            
+            if (flag) {
+                cadena2 += cadena.charAt(i);
+            }else{
+                cadena1 += cadena.charAt(i);
+            }
+        }
+        float x = convertirBinarioADecimalManual(cadena1,0);
+        float y = convertirBinarioADecimalManual(cadena2,1);
+        float result = x+y;
+        System.out.println("SALIDA "+ result);
+    }
+    public float convertirBinarioADecimalManual(String binario, int des) {
+        float decimal = 0;
+        if(des == 0){
+            int posicion = 0;
+            for (int x = binario.length() - 1; x >= 0; x--) {
+                short digito = 1;
+                if (binario.charAt(x) == '0') {
+                    digito = 0;
+                }
+                double multiplicador = Math.pow(2, posicion);
+                decimal += digito * multiplicador;
+                posicion++;
+            }
+        }else{
+        int posicion = 1;
+            for (int x = 0; x < binario.length(); x++) {
+                short digito = 1;
+                if (binario.charAt(x) == '0') {
+                    digito = 0;
+                }
+                double multiplicador = Math.pow(2, -posicion);
+                decimal += digito * multiplicador;
+                posicion++;
+            }
+        }
+            
+            
+        
+  return decimal;
+}
+    
+
+:}
+
+terminal String PUNTO;
+terminal String COMMA;
+terminal String PYC;
+terminal String DOSP;
+terminal String PARA;
+terminal String PARC;
+terminal String LLAVEA;
+terminal String LLAVEC;
+terminal String CORA;
+terminal String CORC;
+terminal String MAS;
+terminal String MENOS;
+terminal String POR;
+terminal String DIVIDIDO;
+terminal String RAIZ;
+terminal String ELEVADO;
+
+terminal String NUM;
+
+non terminal ini, E;
+
+start with ini;
+
+ini::=E      {: System.out.println("ENTRADA: "+cadena);
+obtenercadenatotal("SSSSSS"); 
+ :}
+;
+
+E ::=
+    NUM:num E   {: System.out.println(num);
+cadena+=num; :}
+    | NUM:num   {: System.out.println(num); 
+cadena+=num; :}
+    
+;
