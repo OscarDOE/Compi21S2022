@@ -1,0 +1,48 @@
+
+package analizadores;
+import java_cup.runtime.Symbol; 
+
+%% 
+%class Lexico
+%public 
+%line 
+%char 
+%cup 
+%unicode
+%ignorecase
+
+%init{ 
+    yyline = 1; 
+    yychar = 1; 
+%init} 
+
+BLANCOS=[ \r\t]+
+BINARIOS=^1(1|0)*(.(1|0)*)?
+%%
+
+"." {return new Symbol(sym.PUNTO,yyline,yychar, yytext());} 
+"," {return new Symbol(sym.COMMA,yyline,yychar, yytext());} 
+";" {return new Symbol(sym.PYC,yyline,yychar, yytext());} 
+":" {return new Symbol(sym.DOSP,yyline,yychar, yytext());} 
+"(" {return new Symbol(sym.PARA,yyline,yychar, yytext());} 
+")" {return new Symbol(sym.PARC,yyline,yychar, yytext());} 
+"{" {return new Symbol(sym.LLAVEA,yyline,yychar, yytext());} 
+"}" {return new Symbol(sym.LLAVEC,yyline,yychar, yytext());} 
+"[" {return new Symbol(sym.CORA,yyline,yychar, yytext());} 
+"]" {return new Symbol(sym.CORC,yyline,yychar, yytext());} 
+"+" {return new Symbol(sym.MAS,yyline,yychar, yytext());} 
+"-" {return new Symbol(sym.MENOS,yyline,yychar, yytext());} 
+"*" {return new Symbol(sym.POR,yyline,yychar, yytext());} 
+"/" {return new Symbol(sym.DIVIDIDO,yyline,yychar, yytext());} 
+"//" {return new Symbol(sym.RAIZ,yyline,yychar, yytext());} 
+"^" {return new Symbol(sym.ELEVADO,yyline,yychar, yytext());} 
+
+\n {yychar=1;}
+
+{BLANCOS} {}
+{BINARIOS} {return new Symbol(sym.NUM,yyline,yychar,yytext());}
+
+
+. {
+    System.out.println("Este es un error lex: "+yytext());
+}
