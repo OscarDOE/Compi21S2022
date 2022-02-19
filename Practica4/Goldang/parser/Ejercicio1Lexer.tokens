@@ -1,0 +1,8 @@
+T__0=1
+CORI=2
+CORD=3
+NUMBER=4
+WHITESPACE=5
+'int'=1
+'['=2
+']'=3
