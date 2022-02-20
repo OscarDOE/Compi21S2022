@@ -1,4 +1,4 @@
-2022-02-18 23:04:45:760 grammar LogManager.java:25 before: (COMBINED_GRAMMAR Practica4 (@ parser header {
+2022-02-19 22:27:55:471 grammar LogManager.java:25 before: (COMBINED_GRAMMAR Practica4 (@ parser header {
     import ("Goldang/Node"
 
 	"strings"
@@ -52,7 +52,7 @@
                                     y := "" 
                                     $n = node.NewNodo(x,y)
     }))) (RULE PARA (BLOCK (ALT '('))) (RULE PARC (BLOCK (ALT ')'))) (RULE COMA (BLOCK (ALT ','))) (RULE NUMBER (BLOCK (ALT (? (BLOCK (ALT '-'))) (+ (BLOCK (ALT [0-9])))))) (RULE WHITESPACE (BLOCK (LEXER_ALT_ACTION (ALT (+ (BLOCK (ALT [ \r\n\t])))) skip)))))
-2022-02-18 23:04:45:772 grammar LogManager.java:25 after: (COMBINED_GRAMMAR Practica4 (@ parser header {
+2022-02-19 22:27:55:482 grammar LogManager.java:25 after: (COMBINED_GRAMMAR Practica4 (@ parser header {
     import ("Goldang/Node"
 
 	"strings"
@@ -106,7 +106,7 @@
                                     y := "" 
                                     $n = node.NewNodo(x,y)
     }))) (RULE PARA (BLOCK (ALT '('))) (RULE PARC (BLOCK (ALT ')'))) (RULE COMA (BLOCK (ALT ','))) (RULE NUMBER (BLOCK (ALT (? (BLOCK (ALT '-'))) (+ (BLOCK (ALT [0-9])))))) (RULE WHITESPACE (BLOCK (LEXER_ALT_ACTION (ALT (+ (BLOCK (ALT [ \r\n\t])))) skip)))))
-2022-02-18 23:04:45:793 grammar LogManager.java:25 after extract implicit lexer =(COMBINED_GRAMMAR Practica4 (@ parser header {
+2022-02-19 22:27:55:505 grammar LogManager.java:25 after extract implicit lexer =(COMBINED_GRAMMAR Practica4 (@ parser header {
     import ("Goldang/Node"
 
 	"strings"
@@ -160,7 +160,7 @@
                                     y := "" 
                                     $n = node.NewNodo(x,y)
     })))))
-2022-02-18 23:04:45:793 grammar LogManager.java:25 lexer =(LEXER_GRAMMAR Practica4Lexer (@ parser header {
+2022-02-19 22:27:55:505 grammar LogManager.java:25 lexer =(LEXER_GRAMMAR Practica4Lexer (@ parser header {
     import ("Goldang/Node"
 
 	"strings"
@@ -204,7 +204,7 @@
     }
     
 }) (RULES (RULE PARA (BLOCK (ALT '('))) (RULE PARC (BLOCK (ALT ')'))) (RULE COMA (BLOCK (ALT ','))) (RULE NUMBER (BLOCK (ALT (? (BLOCK (ALT '-'))) (+ (BLOCK (ALT [0-9])))))) (RULE WHITESPACE (BLOCK (LEXER_ALT_ACTION (ALT (+ (BLOCK (ALT [ \r\n\t])))) skip)))))
-2022-02-18 23:04:46:225 left-recursion LogManager.java:25 lista returns [node.Nodo n]
+2022-02-19 22:27:56:007 left-recursion LogManager.java:25 lista returns [node.Nodo n]
     :   ( {} PARA<tokenIndex=70> num=NUMBER<tokenIndex=74> COMA<tokenIndex=76> num2=NUMBER<tokenIndex=80> PARC<tokenIndex=82>        {
                                     x := $num.text + " " + $num2.text
                                     y := "" 
@@ -219,7 +219,7 @@
               }
         )*
     ;
-2022-02-18 23:04:46:232 grammar LogManager.java:25 added: (RULE lista (returns node.Nodo n) (BLOCK (ALT (BLOCK (ALT {} (PARA (ELEMENT_OPTIONS (= tokenIndex 70))) (= num (NUMBER (ELEMENT_OPTIONS (= tokenIndex 74)))) (COMA (ELEMENT_OPTIONS (= tokenIndex 76))) (= num2 (NUMBER (ELEMENT_OPTIONS (= tokenIndex 80)))) (PARC (ELEMENT_OPTIONS (= tokenIndex 82))) {
+2022-02-19 22:27:56:014 grammar LogManager.java:25 added: (RULE lista (returns node.Nodo n) (BLOCK (ALT (BLOCK (ALT {} (PARA (ELEMENT_OPTIONS (= tokenIndex 70))) (= num (NUMBER (ELEMENT_OPTIONS (= tokenIndex 74)))) (COMA (ELEMENT_OPTIONS (= tokenIndex 76))) (= num2 (NUMBER (ELEMENT_OPTIONS (= tokenIndex 80)))) (PARC (ELEMENT_OPTIONS (= tokenIndex 82))) {
                                     x := $num.text + " " + $num2.text
                                     y := "" 
                                     $n = node.NewNodo(x,y)
@@ -228,13 +228,13 @@
                                                   y := $na.n.B 
                                                   $n = node.NewNodo(x, y)
               }))))))
-2022-02-18 23:04:46:233 semantics LogManager.java:25 tokens={EOF=-1, PARA=1, PARC=2, COMA=3, NUMBER=4, WHITESPACE=5}
-2022-02-18 23:04:46:233 semantics LogManager.java:25 strings={'('=1, ')'=2, ','=3}
-2022-02-18 23:04:46:250 LL1 LogManager.java:25 
+2022-02-19 22:27:56:015 semantics LogManager.java:25 tokens={EOF=-1, PARA=1, PARC=2, COMA=3, NUMBER=4, WHITESPACE=5}
+2022-02-19 22:27:56:015 semantics LogManager.java:25 strings={'('=1, ')'=2, ','=3}
+2022-02-19 22:27:56:022 LL1 LogManager.java:25 
 DECISION 0 in rule lista
-2022-02-18 23:04:46:252 LL1 LogManager.java:25 look=[null, <EOF>]
-2022-02-18 23:04:46:252 LL1 LogManager.java:25 LL(1)? false
-2022-02-18 23:04:46:257 action-translator LogManager.java:25 translate 
+2022-02-19 22:27:56:025 LL1 LogManager.java:25 look=[null, <EOF>]
+2022-02-19 22:27:56:025 LL1 LogManager.java:25 LL(1)? false
+2022-02-19 22:27:56:030 action-translator LogManager.java:25 translate 
 
 
 
@@ -272,40 +272,40 @@ DECISION 0 in rule lista
     }
     
 
-2022-02-18 23:04:46:257 action-translator LogManager.java:25 translate 
+2022-02-19 22:27:56:030 action-translator LogManager.java:25 translate 
     import ("Goldang/Node"
 
 	"strings"
     "math"
     )
 
-2022-02-18 23:04:46:304 action-translator LogManager.java:25 translate 
+2022-02-19 22:27:56:087 action-translator LogManager.java:25 translate 
                         mostrar($un.n.A + $un.n.B )
     
-2022-02-18 23:04:46:305 action-translator LogManager.java:25 qattr [@-1,35:36='un',<0>,59:33].[@-1,38:38='n',<0>,59:36]
-2022-02-18 23:04:46:305 action-translator LogManager.java:25 qattr [@-1,45:46='un',<0>,59:43].[@-1,48:48='n',<0>,59:46]
-2022-02-18 23:04:46:307 action-translator LogManager.java:25 translate 
-2022-02-18 23:04:46:307 action-translator LogManager.java:25 translate 
+2022-02-19 22:27:56:087 action-translator LogManager.java:25 qattr [@-1,35:36='un',<0>,59:33].[@-1,38:38='n',<0>,59:36]
+2022-02-19 22:27:56:087 action-translator LogManager.java:25 qattr [@-1,45:46='un',<0>,59:43].[@-1,48:48='n',<0>,59:46]
+2022-02-19 22:27:56:089 action-translator LogManager.java:25 translate 
+2022-02-19 22:27:56:089 action-translator LogManager.java:25 translate 
                                     x := $num.text + " " + $num2.text
                                     y := "" 
                                     $n = node.NewNodo(x,y)
     
-2022-02-18 23:04:46:307 action-translator LogManager.java:25 qattr [@-1,44:46='num',<0>,3:42].[@-1,48:51='text',<0>,3:46]
-2022-02-18 23:04:46:308 action-translator LogManager.java:25 qattr [@-1,62:65='num2',<0>,3:60].[@-1,67:70='text',<0>,3:65]
-2022-02-18 23:04:46:308 action-translator LogManager.java:25 attr [@-1,156:156='n',<0>,5:37]
-2022-02-18 23:04:46:308 action-translator LogManager.java:25 translate p.Precpred(p.GetParserRuleContext(), 2)
-2022-02-18 23:04:46:309 action-translator LogManager.java:25 translate 
+2022-02-19 22:27:56:090 action-translator LogManager.java:25 qattr [@-1,44:46='num',<0>,3:42].[@-1,48:51='text',<0>,3:46]
+2022-02-19 22:27:56:090 action-translator LogManager.java:25 qattr [@-1,62:65='num2',<0>,3:60].[@-1,67:70='text',<0>,3:65]
+2022-02-19 22:27:56:090 action-translator LogManager.java:25 attr [@-1,156:156='n',<0>,5:37]
+2022-02-19 22:27:56:091 action-translator LogManager.java:25 translate p.Precpred(p.GetParserRuleContext(), 2)
+2022-02-19 22:27:56:091 action-translator LogManager.java:25 translate 
                                                   x := $na.n.A + " " + $num.text + " "+$num2.text
                                                   y := $na.n.B 
                                                   $n = node.NewNodo(x, y)
               
-2022-02-18 23:04:46:309 action-translator LogManager.java:25 qattr [@-1,58:59='na',<0>,10:56].[@-1,61:61='n',<0>,10:59]
-2022-02-18 23:04:46:309 action-translator LogManager.java:25 qattr [@-1,74:76='num',<0>,10:72].[@-1,78:81='text',<0>,10:76]
-2022-02-18 23:04:46:309 action-translator LogManager.java:25 qattr [@-1,90:93='num2',<0>,10:88].[@-1,95:98='text',<0>,10:93]
-2022-02-18 23:04:46:309 action-translator LogManager.java:25 qattr [@-1,157:158='na',<0>,11:56].[@-1,160:160='n',<0>,11:59]
-2022-02-18 23:04:46:309 action-translator LogManager.java:25 attr [@-1,217:217='n',<0>,12:51]
-2022-02-18 23:04:46:311 action-translator LogManager.java:25 translate p.Precpred(p.GetParserRuleContext(), 2)
-2022-02-18 23:04:46:434 action-translator LogManager.java:25 translate 
+2022-02-19 22:27:56:092 action-translator LogManager.java:25 qattr [@-1,58:59='na',<0>,10:56].[@-1,61:61='n',<0>,10:59]
+2022-02-19 22:27:56:092 action-translator LogManager.java:25 qattr [@-1,74:76='num',<0>,10:72].[@-1,78:81='text',<0>,10:76]
+2022-02-19 22:27:56:092 action-translator LogManager.java:25 qattr [@-1,90:93='num2',<0>,10:88].[@-1,95:98='text',<0>,10:93]
+2022-02-19 22:27:56:092 action-translator LogManager.java:25 qattr [@-1,157:158='na',<0>,11:56].[@-1,160:160='n',<0>,11:59]
+2022-02-19 22:27:56:092 action-translator LogManager.java:25 attr [@-1,217:217='n',<0>,12:51]
+2022-02-19 22:27:56:095 action-translator LogManager.java:25 translate p.Precpred(p.GetParserRuleContext(), 2)
+2022-02-19 22:27:56:231 action-translator LogManager.java:25 translate 
 
 
 
@@ -343,21 +343,21 @@ DECISION 0 in rule lista
     }
     
 
-2022-02-18 23:04:46:434 action-translator LogManager.java:25 translate 
+2022-02-19 22:27:56:231 action-translator LogManager.java:25 translate 
     import ("Goldang/Node"
 
 	"strings"
     "math"
     )
 
-2022-02-18 23:04:46:434 action-translator LogManager.java:25 translate 
+2022-02-19 22:27:56:231 action-translator LogManager.java:25 translate 
     import ("Goldang/Node"
 
 	"strings"
     "math"
     )
 
-2022-02-18 23:04:46:517 action-translator LogManager.java:25 translate 
+2022-02-19 22:27:56:372 action-translator LogManager.java:25 translate 
 
 
 
@@ -395,14 +395,14 @@ DECISION 0 in rule lista
     }
     
 
-2022-02-18 23:04:46:518 action-translator LogManager.java:25 translate 
+2022-02-19 22:27:56:372 action-translator LogManager.java:25 translate 
     import ("Goldang/Node"
 
 	"strings"
     "math"
     )
 
-2022-02-18 23:04:46:518 action-translator LogManager.java:25 translate 
+2022-02-19 22:27:56:372 action-translator LogManager.java:25 translate 
     import ("Goldang/Node"
 
 	"strings"

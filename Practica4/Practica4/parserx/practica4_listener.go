@@ -1,11 +1,11 @@
-// Code generated from Ejercicio1.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from Practica4.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
-package parser // Ejercicio1
+package parser // Practica4
 
 import "github.com/antlr/antlr4/runtime/Go/antlr"
 
-// Ejercicio1Listener is a complete listener for a parse tree produced by Ejercicio1Parser.
-type Ejercicio1Listener interface {
+// Practica4Listener is a complete listener for a parse tree produced by Practica4Parser.
+type Practica4Listener interface {
 	antlr.ParseTreeListener
 
 	// EnterStart is called when entering the start production.
